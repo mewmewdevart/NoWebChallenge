@@ -1,16 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --font-inter: "Inter", sans-serif;
+
+  --color-charcoal: #232323;
+  --color-white: #FFFFFF;
+  --color-silver: #8D8D8D;
+  --color-light-gray: #E5E5E5;
+  --color-dark-blue: #1B2543;
+  --color-black: #000000; /* Black color with 100% opacity */
+  --color-black-transparent: rgba(0, 0, 0, 0.2); /* Black color (000000) with 20% opacity */
+  --color-linear-gradient: transparent; /* Placeholder: "Linear" represents a CSS gradient, not a solid color. */
+  --color-dark-gray: #282828;
+  --color-orange-red: #F6C010;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply text-base font-inter;
 }
