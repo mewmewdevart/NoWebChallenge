@@ -13,10 +13,10 @@
   --color-black-transparent: rgba(0, 0, 0, 0.2); /* Black color (000000) with 20% opacity */
   --color-linear-gradient: transparent; /* Placeholder: "Linear" represents a CSS gradient, not a solid color. */
   --color-dark-gray: #282828;
-  --color-orange-red: #F6C010;
+  --color-yellow: #F6C010;
 }
 
 :root {
 
-  @apply text-base font-inter;
+  @apply text-base font-inter text-charcoal;
 }
