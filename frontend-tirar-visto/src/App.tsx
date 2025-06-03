@@ -1,4 +1,5 @@
 import HeroSection from './components/pages/HeroSection'
+import WhyChooseUs from './components/pages/WhyChooseUs';
 import WhyChooseUsPhrase from './components/pages/WhyChooseUsPhrase';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <>
       <HeroSection menuItems={menuItems} />
       <WhyChooseUsPhrase />
+      <WhyChooseUs />
     </>
   )
 }
