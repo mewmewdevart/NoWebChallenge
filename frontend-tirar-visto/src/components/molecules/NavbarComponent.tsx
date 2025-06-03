@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-
-import AnimatedHamburgerIcon from '../atoms/AnimatedHamburgerIcon'; 
+import React, { useState, useEffect, useCallback } from 'react';
+import AnimatedHamburgerIcon from '../atoms/AnimatedHamburgerIcon';
 
 export interface MenuItem {
   label: string;
@@ -16,6 +15,9 @@ interface NavbarComponentProps {
   navAriaLabel?: string;
 }
 
+const ANIMATION_DURATION = 300;
+const MOBILE_BREAKPOINT = 1151;
+
 const NavbarComponent: React.FC<NavbarComponentProps> = ({
   logoSrc,
   logoAlt = 'Logotipo',
@@ -26,46 +28,65 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [animateMobileMenu, setAnimateMobileMenu] = useState(false);
+  const [shouldRenderMobileElements, setShouldRenderMobileElements] = useState(false);
 
-  const checkScreenSize = () => {
-    const mobile = window.innerWidth < 768;
+  const checkScreenSize = useCallback(() => {
+    const mobile = window.innerWidth <= MOBILE_BREAKPOINT;
     setIsMobile(mobile);
-    if (!mobile && isMobileMenuOpen) { 
-        setIsMobileMenuOpen(false);
+    if (!mobile && isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
     }
-  };
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
-  }, [isMobileMenuOpen]);
+  }, [checkScreenSize]);
+
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen(prev => !prev);
   };
 
   useEffect(() => {
+    let animationTimer: NodeJS.Timeout;
+    let unmountTimer: NodeJS.Timeout;
+
     if (isMobileMenuOpen) {
+      setShouldRenderMobileElements(true);
       document.body.style.overflow = 'hidden';
-      const timer = setTimeout(() => setAnimateMobileMenu(true), 10);
-      return () => {
-        clearTimeout(timer);
-        document.body.style.overflow = ''; 
-      };
+      animationTimer = setTimeout(() => {
+        setAnimateMobileMenu(true);
+      }, 10);
     } else {
       setAnimateMobileMenu(false);
-      document.body.style.overflow = '';
+      unmountTimer = setTimeout(() => {
+        setShouldRenderMobileElements(false);
+        document.body.style.overflow = '';
+      }, ANIMATION_DURATION);
     }
-    return () => { 
-      document.body.style.overflow = '';
+
+    return () => {
+      clearTimeout(animationTimer);
+      clearTimeout(unmountTimer);
+      if (document.body.style.overflow === 'hidden') {
+         document.body.style.overflow = '';
+      }
     };
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    return () => {
+      if (document.body.style.overflow === 'hidden') {
+        document.body.style.overflow = '';
+      }
+    };
+  }, []);
 
   return (
     <>
       <nav
-        className="flex items-center justify-between lg:justify-start h-[100px] w-full px-4 md:px-0 z-[60] relative bg-white "
+        className="flex items-center justify-between lg2:justify-start h-[100px] w-full z-[60] relative bg-white"
         aria-label={navAriaLabel}
       >
         <div className="flex items-center">
@@ -88,8 +109,7 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
           )}
         </div>
 
-        {/* Menu - Desktop */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden lg2:flex items-center">
           <ul id="navbar-menu-desktop" className="flex items-center justify-between">
             {menuItems.map((item, index) => (
               <li key={index} className="min-w-fit text-center">
@@ -97,7 +117,7 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
                   href={item.href}
                   className={`px-3 text-sm transition-all duration-200 ease-in-out group relative
                               ${item.isCurrent
-                                ? 'text-charcoal font-semibold' 
+                                ? 'text-charcoal font-semibold'
                                 : 'text-charcoal hover:font-semibold'
                               }`}
                   {...(item.isCurrent ? { 'aria-current': 'page' } : {})}
@@ -114,33 +134,33 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
           </ul>
         </div>
 
-        <div className="md:hidden flex items-center z-[70]"> 
+        <div className="lg2:hidden flex items-center z-[70]">
           <AnimatedHamburgerIcon
             isOpen={isMobileMenuOpen}
             onClick={toggleMobileMenu}
             ariaLabel={isMobileMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
             ariaExpanded={isMobileMenuOpen}
             ariaControls="navbar-menu-mobile"
-            className="text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" 
+            className="text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
           />
         </div>
 
-        {/* Menu Mobile Dropdown/Drawer */}
-        {isMobile && isMobileMenuOpen && (
+        {isMobile && shouldRenderMobileElements && (
           <div
             id="navbar-menu-mobile"
-            className={`absolute top-[100px] left-0 w-full bg-white md:hidden flex flex-col items-center py-2 z-[60]
-                        transition-all duration-300 ease-in-out transform
-                        ${animateMobileMenu ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
+            className={`absolute top-[100px] left-0 w-full bg-white lg2:hidden flex flex-col items-center py-2 z-[60]
+                        transition-all ease-in-out transform`}
+            style={{ transitionDuration: `${ANIMATION_DURATION}ms`}}
+            data-animate={animateMobileMenu}
           >
-            <ul className="w-full">
+            <ul className={`w-full transition-opacity ease-in-out transform ${animateMobileMenu ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`} style={{ transitionDuration: `${ANIMATION_DURATION}ms`}}>
               {menuItems.map((item, index) => (
                 <li key={index} className="w-full text-center">
                   <a
                     href={item.href}
-                    className={`block w-full py-3 px-4 text-base  transition-colors duration-150 ease-in-out
+                    className={`block w-full py-3 px-4 text-base transition-colors duration-150 ease-in-out
                                 ${item.isCurrent
-                                ? 'text-charcoal font-semibold' 
+                                ? 'text-charcoal font-semibold'
                                 : 'text-charcoal hover:font-semibold'
                                 }`}
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -155,12 +175,12 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
         )}
       </nav>
 
-      {/* Overlay - Menu Mobile */}
-      {isMobile && isMobileMenuOpen && (
+      {isMobile && shouldRenderMobileElements && (
         <div
-          className={`fixed inset-0 bg-black z-50 md:hidden
-                      transition-opacity duration-300 ease-in-out
+          className={`fixed inset-0 bg-black z-50 lg2:hidden
+                      transition-opacity ease-in-out
                       ${animateMobileMenu ? 'bg-opacity-50' : 'bg-opacity-0 pointer-events-none'}`}
+          style={{ transitionDuration: `${ANIMATION_DURATION}ms`}}
           onClick={toggleMobileMenu}
           aria-hidden="true"
         ></div>

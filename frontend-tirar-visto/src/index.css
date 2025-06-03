@@ -14,9 +14,10 @@
   --color-linear-gradient: transparent; /* Placeholder: "Linear" represents a CSS gradient, not a solid color. */
   --color-dark-gray: #282828;
   --color-yellow: #F6C010;
+
+  --breakpoint-lg2: 71.9375rem; 
 }
 
 :root {
-
-  @apply text-base font-inter text-charcoal;
+  @apply text-base font-inter text-charcoal bg-white;
 }

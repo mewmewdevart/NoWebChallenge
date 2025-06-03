@@ -11,6 +11,7 @@ function App() {
   return (
     <>
       <HeroSection menuItems={menuItems} />
+      <h1 className='bg-red-500'>ola</h1>
     </>
   )
 }

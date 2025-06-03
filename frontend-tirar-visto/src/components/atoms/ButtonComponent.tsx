@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 type NativeButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 interface ButtonComponentProps extends Omit<NativeButtonProps, 'ref'> {
-  label: React.ReactNode;
+  label?: React.ReactNode;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   variant: 'fullDarkBlue' | 'fullYellow' | 'ghost';
@@ -14,12 +14,12 @@ interface ButtonComponentProps extends Omit<NativeButtonProps, 'ref'> {
 
 const buttonStyles = {
   fullDarkBlue: {
-    large: 'cursor-pointer bg-dark-blue hover:translate-y-[1px] hover:bg-red-500 transition-all duration-200 ease-in-out text-sm lg:text-base leading-[24px] rounded-[40px] px-[12px] flex items-center justify-center gap-[6px] h-[48px] text-white w-[133px] w-fit',
-    small: 'cursor-pointer bg-dark-blue hover:translate-y-[1px] hover:bg-red-500 transition-all duration-200 ease-in-out text-[16px] leading-[20px] rounded-[40px] px-[20px] flex items-center justify-center gap-[4px] h-[40px] text-white min-w-[160px] w-fit',
+    large: 'cursor-pointer bg-dark-blue hover:translate-y-[1px] hover:bg-yellow transition-all duration-200 ease-in-out text-sm lg:text-base leading-[24px] rounded-[40px] px-[12px] flex items-center justify-center gap-[6px] h-[48px] text-white w-[133px] w-fit',
+    small: 'cursor-pointer bg-dark-blue hover:translate-y-[1px] hover:bg-yellow transition-all duration-200 ease-in-out text-[16px] leading-[20px] rounded-[40px] px-[20px] flex items-center justify-center gap-[4px] h-[40px] text-white min-w-[160px] w-fit',
   },
 fullYellow: {
-    large: 'cursor-pointer bg-yellow hover:translate-y-[1px] hover:bg-red-500 transition-all duration-200 ease-in-out text-sm lg:text-base leading-[24px] rounded-[40px] px-[12px] flex items-center justify-center gap-[6px] h-[48px] text-white w-[133px] w-fit',
-    small: 'cursor-pointer bg-yellow hover:translate-y-[1px] hover:bg-red-500 transition-all duration-200 ease-in-out text-[16px] leading-[20px] rounded-[40px] px-[20px] flex items-center justify-center gap-[4px] h-[40px] text-white min-w-[160px] w-fit',
+    large: 'cursor-pointer bg-yellow hover:translate-y-[1px] hover:bg-dark-blue hover:text-white transition-all duration-200 ease-in-out text-sm lg:text-base leading-[24px] rounded-[40px] px-[12px] flex items-center justify-center gap-[6px] h-[48px] text-white w-[133px] w-fit',
+    small: 'cursor-pointer bg-yellow hover:translate-y-[1px] hover:bg-dark-blue hover:text-white transition-all duration-200 ease-in-out text-[16px] leading-[20px] rounded-[40px] px-[20px] flex items-center justify-center gap-[4px] h-[40px] text-white min-w-[160px] w-fit',
   },
   ghost: {
     large: 'cursor-pointer bg-transparent hover:bg-neutral-100 transition-all duration-200 ease-in-out text-sm lg:text-base leading-[24px] rounded-[40px] px-[12px] flex items-center justify-center gap-[6px] h-[48px] text-neutral-500 w-[133px] w-fit',
