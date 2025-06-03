@@ -8,6 +8,7 @@
   --color-white: #FFFFFF;
   --color-silver: #8D8D8D;
   --color-light-gray: #E5E5E5;
+  --color-gray: #F7F7F7;
   --color-dark-blue: #1B2543;
   --color-black: #000000; /* Black color with 100% opacity */
   --color-black-transparent: rgba(0, 0, 0, 0.2); /* Black color (000000) with 20% opacity */

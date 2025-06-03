@@ -41,7 +41,7 @@ const STATS_DATA = [
 
 function HeroSection({ menuItems }: HeroSectionProps) {
     return (
-        <section className='flex justify-center gap-x-4 2xl:gap-0 flex-row min-h-screen w-full px-4 lg2:px-20 2xl:px-48 3xl:px-60 py-4'>
+        <section className='flex justify-center gap-x-4 2xl:gap-0 flex-row lg:min-h-screen w-full px-4 lg2:px-20 2xl:px-48 3xl:px-60 py-4'>
             <div className='w-full flex flex-col'>
                 <NavbarComponent
                     logoSrc={logoTirarVistoSrc}

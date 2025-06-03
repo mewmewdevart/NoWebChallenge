@@ -1,4 +1,5 @@
 import HeroSection from './components/pages/HeroSection'
+import WhyChooseUsPhrase from './components/pages/WhyChooseUsPhrase';
 
 function App() {
     const menuItems = [
@@ -11,7 +12,7 @@ function App() {
   return (
     <>
       <HeroSection menuItems={menuItems} />
-      <h1 className='bg-red-500'>ola</h1>
+      <WhyChooseUsPhrase />
     </>
   )
 }
