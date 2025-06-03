@@ -1,4 +1,6 @@
 import HeroSection from './components/pages/HeroSection'
+import SpecialPackage from './components/pages/SpecialPackage';
+import TopDestination from './components/pages/TopDestination';
 import WhyChooseUs from './components/pages/WhyChooseUs';
 import WhyChooseUsPhrase from './components/pages/WhyChooseUsPhrase';
 
@@ -12,9 +14,11 @@ function App() {
 
   return (
     <>
-      <HeroSection menuItems={menuItems} />
+      {/* <HeroSection menuItems={menuItems} />
       <WhyChooseUsPhrase />
       <WhyChooseUs />
+      <TopDestination /> */}
+      <SpecialPackage/>
     </>
   )
 }
