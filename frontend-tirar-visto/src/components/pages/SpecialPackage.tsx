@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import type { JSX } from 'react';
 import ButtonComponent from "../atoms/ButtonComponent"; 
 import EastIcon from '@mui/icons-material/East';

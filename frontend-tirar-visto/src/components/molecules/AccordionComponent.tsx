@@ -10,7 +10,7 @@ export default function AccordionComponent({ title, description }: { title?: str
   const panelId = title ? `${title.replace(/\s+/g, '-').toLowerCase()}` : 'custom-accordion';
   const [isExpanded, setIsExpanded] = React.useState(false);
 
-  const handleAccordionChange = (event: React.SyntheticEvent, newExpandedState: boolean) => {
+  const handleAccordionChange = (_: React.SyntheticEvent, newExpandedState: boolean) => {
     setIsExpanded(newExpandedState);
   };
 
