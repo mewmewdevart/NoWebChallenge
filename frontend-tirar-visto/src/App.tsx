@@ -14,11 +14,11 @@ function App() {
 
   return (
     <>
-      {/* <HeroSection menuItems={menuItems} />
+      <HeroSection menuItems={menuItems} />
       <WhyChooseUsPhrase />
       <WhyChooseUs />
-      <TopDestination /> */}
-      <SpecialPackage/>
+      <TopDestination />
+      <SpecialPackage />
     </>
   )
 }
