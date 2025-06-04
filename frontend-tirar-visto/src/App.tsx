@@ -16,8 +16,8 @@ function App() {
   return (
     <>
       <HeroSection menuItems={menuItems} />
-      {/* <WhyChooseUsPhrase />
-      <WhyChooseUs />
+      <WhyChooseUsPhrase />
+      {/* <WhyChooseUs />
       <TopDestination />
       <SpecialPackage />
       <Footer /> */}

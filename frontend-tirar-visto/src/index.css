@@ -37,10 +37,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-yellow;
+  @apply bg-dark-blue;
   border-radius: 20px; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-orange-hover ; 
+  @apply bg-charcoal cursor-pointer; 
 }
