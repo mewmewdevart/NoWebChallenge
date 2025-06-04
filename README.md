@@ -245,6 +245,15 @@ Video de todo o projeto:
 
 ## 👩🏿 Experiência
 
+Foi tranquilo e gostoso de fazer o desafio. Me diverti enquanto criava cada pedaço da interface, vendo os elementos sairem do Figma e ganharem vida no codigo. Pude fortalecer os meus conhecimento em :
+* **React e Atomic Design:** Consegui aplicar o Atomic Design na prática para organizar os componentes, o que deixou tudo mais ajeitadinho e fácil de mexer depois.
+* **Acessibilidade (A11y):** Pude ir além do básico, implementando os skip links (aqueles para pular navegação, sabe?), usando HTML semântico direitinho e pensando nos atributos ARIA para quem usa leitor de tela.
+* **SEO:** Dei uma atenção extra para as meta tags e até coloquei uns dados estruturados (JSON-LD) no `index.html`, pensando em como o Google ia "enxergar" a página.
+* **Fidelidade ao Design:** Tentei ser o mais fiel possível ao layout do Figma, e ainda aproveitei para dar uns "polimentos adicionais" em alguns detalhes para deixar a experiência ainda melhor.
+
+A única coisinha que não me deixou 100% satisfeita foi a responsividade. O site está responsivo, se adapta a diferentes telas porém sinto que se tivesse um design especifico para mobile no desafio, para replicar no codigo, o resultado final para mobile teria ficado mais agradavel em questão de design. 
+
+No geral, curti a experiência! Se o prazo fosse um pouquinho maior, com certeza eu mergulharia de cabeça para adicionar mais animações e faria testes ainda mais profundos de acessibilidade com diferentes leitores de tela. Foi um bom desafio, obrigada pela experiencia!
 
 ## 📜 Licença
 
