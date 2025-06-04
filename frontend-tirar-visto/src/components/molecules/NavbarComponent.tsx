@@ -15,7 +15,7 @@ interface NavbarComponentProps {
   navAriaLabel?: string;
 }
 
-const ANIMATION_DURATION = 300;
+const ANIMATION_DURATION = 300; // ms
 const MOBILE_BREAKPOINT = 1151;
 
 const NavbarComponent: React.FC<NavbarComponentProps> = ({
@@ -86,7 +86,7 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
   return (
     <>
       <nav
-        className="flex items-center justify-between lg2:justify-start h-[100px] w-full z-[60] relative bg-white"
+        className="flex items-center justify-between lg2:justify-start h-[100px] w-full z-[60] 2xl:relative bg-white"
         aria-label={navAriaLabel}
       >
         <div className="flex items-center">
@@ -102,14 +102,14 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
                   : '')
               }
             >
-              <img src={logoSrc} alt={logoAlt} className="h-10 mr-4" />
+              <img src={logoSrc} alt={logoAlt} className="h-10 mr-4" loading="lazy" />
             </a>
           ) : (
-            <img src={logoSrc} alt={logoAlt} className="h-10 mr-4 transition-opacity duration-200 ease-in-out hover:opacity-75" />
+            <img src={logoSrc} alt={logoAlt} className="h-10 mr-4 transition-opacity duration-200 ease-in-out hover:opacity-75" loading="lazy" />
           )}
         </div>
 
-        <div className="hidden lg2:flex items-center">
+        <div className="hidden lg2:flex items-center bg-red-500-">
           <ul id="navbar-menu-desktop" className="flex items-center justify-between">
             {menuItems.map((item, index) => (
               <li key={index} className="min-w-fit text-center">
@@ -120,7 +120,7 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
                                 ? 'text-charcoal font-semibold'
                                 : 'text-charcoal hover:font-semibold'
                               }`}
-                  {...(item.isCurrent ? { 'aria-current': 'page' } : {})}
+                  aria-current={item.isCurrent ? 'page' : undefined}
                 >
                   {item.label}
                   {!item.isCurrent && (
@@ -148,23 +148,45 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
         {isMobile && shouldRenderMobileElements && (
           <div
             id="navbar-menu-mobile"
-            className={`absolute top-[100px] left-0 w-full bg-white lg2:hidden flex flex-col items-center py-2 z-[60]
-                        transition-all ease-in-out transform`}
+            className={`
+              absolute top-[100px] left-0 right-0 w-full 
+              h-[35vh] 
+              bg-white 
+              lg2:hidden 
+              flex flex-col 
+              py-2 
+              z-[60] 
+              overflow-y-auto 
+              shadow-lg 
+              transition-transform ease-in-out
+              ${animateMobileMenu ? 'translate-y-0' : '-translate-y-full'}
+            `}
             style={{ transitionDuration: `${ANIMATION_DURATION}ms`}}
-            data-animate={animateMobileMenu}
           >
-            <ul className={`w-full transition-opacity ease-in-out transform ${animateMobileMenu ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`} style={{ transitionDuration: `${ANIMATION_DURATION}ms`}}>
+            <ul
+              className={`
+                w-full 
+                transition-opacity ease-in-out
+                ${animateMobileMenu ? 'opacity-100 delay-150' : 'opacity-0'}
+              `}
+              style={{
+                transitionDuration: `${ANIMATION_DURATION}ms`,
+                transitionDelay: animateMobileMenu ? '150ms' : '0ms'
+              }}
+            >
               {menuItems.map((item, index) => (
                 <li key={index} className="w-full text-center">
                   <a
                     href={item.href}
-                    className={`block w-full py-3 px-4 text-base transition-colors duration-150 ease-in-out
-                                ${item.isCurrent
-                                ? 'text-charcoal font-semibold'
-                                : 'text-charcoal hover:font-semibold'
-                                }`}
+                    className={`
+                      block w-full py-3 px-4 text-base transition-colors duration-150 ease-in-out
+                      ${item.isCurrent
+                        ? 'text-charcoal font-semibold bg-gray-100'
+                        : 'text-charcoal hover:font-semibold hover:bg-gray-50'
+                      }
+                    `}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    {...(item.isCurrent ? { 'aria-current': 'page' } : {})}
+                    aria-current={item.isCurrent ? 'page' : undefined}
                   >
                     {item.label}
                   </a>
@@ -174,17 +196,6 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
           </div>
         )}
       </nav>
-
-      {isMobile && shouldRenderMobileElements && (
-        <div
-          className={`fixed inset-0 bg-black z-50 lg2:hidden
-                      transition-opacity ease-in-out
-                      ${animateMobileMenu ? 'bg-opacity-50' : 'bg-opacity-0 pointer-events-none'}`}
-          style={{ transitionDuration: `${ANIMATION_DURATION}ms`}}
-          onClick={toggleMobileMenu}
-          aria-hidden="true"
-        ></div>
-      )}
     </>
   );
 };

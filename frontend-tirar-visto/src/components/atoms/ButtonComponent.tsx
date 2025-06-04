@@ -11,6 +11,7 @@ interface ButtonComponentProps extends Omit<NativeButtonProps, 'ref'> {
   size?: 'large' | 'small';
   type?: 'button' | 'submit' | 'reset';
   ariaLabel?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const buttonStyles = {

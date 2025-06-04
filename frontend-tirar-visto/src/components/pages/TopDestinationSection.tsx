@@ -1,13 +1,13 @@
-import detailBGImageSrc from '@assets/images/detailBG2.png';
-import ButtonComponent from '../atoms/ButtonComponent';
+import ButtonComponent from '@atoms/ButtonComponent';
+import BadgeComponent from '@atoms/BadgeComponent';
 
+import detailBGImageSrc from '@assets/images/detailBG.png';
 import baliImageSrc from '@assets/images/tirar-visto-bali-indonesia.webp';
 import cidadeCaboImageSrc from '@assets/images/tirar-visto-cidade-do-cabo-africa-do-sul.webp';
 import mumbaiImageSrc from '@assets/images/tirar-visto-mumbai-india.webp';
 import novaYorkImageSrc from '@assets/images/tirar-visto-nova-york-eua.webp';
 import parisImageSrc from '@assets/images/tirar-visto-paris-franca.webp';
 import santoriniImageSrc from '@assets/images/tirar-visto-santorini-grecia.webp';
-import BadgeComponent from '../atoms/BadgeComponent';
 
 const destinationData = [
   {

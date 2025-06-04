@@ -7,9 +7,9 @@ import CarouselNavControlsComponent from '@molecules/CarouselNavControlsComponen
 import PackageCarouselComponent from '@/components/organisms/PackageCarouselComponent';
 import { type PackageCardOrganismProps } from '@organisms/PackageCardComponent';
 
-import PassaportImageSrc from '@assets/images/tirar-visto-passaport.png';
-import TakePassaportImageSrc from '@assets/images/tirar-visto-pegando-passaport.png';
-import ConsultImageSrc from '@assets/images/tirar-visto-consultoria.png';
+import PassaportImageSrc from '@assets/images/tirar-visto-passaport.webp';
+import TakePassaportImageSrc from '@assets/images/tirar-visto-pegando-passaport.webp';
+import ConsultImageSrc from '@assets/images/tirar-visto-consultoria.webp';
 
 interface PackageItem extends PackageCardOrganismProps {
     id: number;
