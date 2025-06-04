@@ -148,7 +148,7 @@ Durante o desenvolvimento desta aplicação, alguns desafios surgiram e foram su
     * **Desafio:** Controlar o estado de elementos como o carrossel de pacotes (índice atual, itens por página) e acordeões (painel expandido) de forma eficiente.
     * **Solução:** Utilização dos hooks do React (`useState`, `useEffect`, `useCallback`) para gerenciar o estado localmente nos componentes que necessitam (como `SpecialPackageSection.tsx` controlando o carrossel), mantendo a lógica encapsulada e o fluxo de dados previsível.
 
-Considerações para Evolução (com mais tempo):**
+**Considerações para Evolução (com mais tempo):**
 
 * **Acessibilidade Avançada:** Embora uma base sólida tenha sido implementada, com mais tempo, seria interessante aprofundar em testes com leitores de tela diversos, refinar os padrões ARIA para componentes dinâmicos (como o carrossel, garantindo que as atualizações de conteúdo sejam anunciadas corretamente) e realizar auditorias de acessibilidade mais completas.
 * **Animações e Microinterações:** Para enriquecer a experiência do usuário, poderiam ser adicionadas animações sutis em transições de componentes, hover effects e ao carregar seções, utilizando bibliotecas como Framer Motion ou mesmo transições CSS, sempre com a preocupação de não prejudicar a performance ou a acessibilidade (respeitando `prefers-reduced-motion`).
@@ -204,7 +204,7 @@ Considerações para Evolução (com mais tempo):**
 
 </details>
 
-🎥 Video de todo o projeto (gravação rapida):
+🎥 Video de todo o projeto (Gravação rapida):
 - Passagem pela acessibilidade do SkipToContent
 - Passagem pela acessibilidade dos Botoes
 - Interações e "animações breves"
