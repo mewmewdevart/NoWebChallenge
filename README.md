@@ -211,7 +211,7 @@ Considerações para Evolução (com mais tempo):**
 - Coesão do Design
 - Responsividade
 
-[Screencast from 2025-06-04 03-31-47.webm](https://github.com/user-attachments/assets/6f923463-e9a9-4e0c-b866-7e22b5a8e592)
+[Gravacao das funcionalidades principais](https://github.com/user-attachments/assets/6f923463-e9a9-4e0c-b866-7e22b5a8e592)
 
 
 ## 🛠️ Tecnologias Utilizadas
