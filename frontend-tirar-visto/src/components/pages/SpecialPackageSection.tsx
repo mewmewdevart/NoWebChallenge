@@ -2,10 +2,10 @@ import { useState, useEffect, useCallback } from 'react';
 import type { JSX } from 'react';
 
 import BadgeComponent from '@atoms/BadgeComponent';
-import SectionHeaderMolecule from '@molecules/SectionHeaderMolecule';
-import CarouselNavControlsMolecule from '@molecules/CarouselNavControlsMolecule';
-import PackageCarouselOrganism from '@organisms/PackageCarouselOrganism';
-import { type PackageCardOrganismProps } from '@organisms/PackageCardOrganism';
+import SectionHeaderComponent from '@molecules/SectionHeaderComponent';
+import CarouselNavControlsComponent from '@molecules/CarouselNavControlsComponent';
+import PackageCarouselComponent from '@/components/organisms/PackageCarouselComponent';
+import { type PackageCardOrganismProps } from '@organisms/PackageCardComponent';
 
 import PassaportImageSrc from '@assets/images/tirar-visto-passaport.png';
 import TakePassaportImageSrc from '@assets/images/tirar-visto-pegando-passaport.png';
@@ -27,7 +27,7 @@ const CARDS_TO_SHOW_DESKTOP: number = 3;
 const CARDS_TO_SHOW_MOBILE: number = 1;
 const MOBILE_BREAKPOINT: number = 1151;
 
-function SpecialPackageSectionOrganism(): JSX.Element {
+function SpecialPackageSection(): JSX.Element {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [cardsPerPage, setCardsPerPage] = useState<number>(CARDS_TO_SHOW_DESKTOP);
     const totalCards: number = packagesData.length;
@@ -84,12 +84,12 @@ function SpecialPackageSectionOrganism(): JSX.Element {
                 size="small"
                 className="font-semibold py-2.5 px-5 rounded-[40px] w-fit mb-2 text-dark-blue h-[44px]"
             />
-            <SectionHeaderMolecule
+            <SectionHeaderComponent
                 title="Confira nossos pacotes"
                 titleId={sectionTitleId}
                 navControls={
                     totalCards > 0 && totalCards > cardsPerPage ? (
-                        <CarouselNavControlsMolecule
+                        <CarouselNavControlsComponent
                             onPrev={handlePrev}
                             onNext={handleNext}
                             isPrevDisabled={effectivePrevDisabled}
@@ -98,7 +98,7 @@ function SpecialPackageSectionOrganism(): JSX.Element {
                     ) : undefined
                 }
             />
-            <PackageCarouselOrganism
+            <PackageCarouselComponent
                 packages={packagesData}
                 currentIndex={currentIndex}
                 cardsPerPage={cardsPerPage}
@@ -107,4 +107,4 @@ function SpecialPackageSectionOrganism(): JSX.Element {
         </section>
     );
 }
-export default SpecialPackageSectionOrganism;
+export default SpecialPackageSection;

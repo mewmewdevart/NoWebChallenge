@@ -1,5 +1,5 @@
-import PhraseTextGroup from '@molecules/PhraseTextGroup';
-import DecorativeIconHolder from '@atoms/DecorativeIconHolder';
+import PhraseTextGroupComponent from '@molecules/PhraseTextGroupComponent';
+import DecorativeIconHolderComponent from '@atoms/DecorativeIconHolderComponent';
 
 import PhoneInTalkSrcIcon from '@assets/icons/call-calling.svg';
 import ClockSrcIcon from '@assets/icons/clock.svg';
@@ -19,19 +19,19 @@ const CONTENT = {
   }
 };
 
-function WhyChooseUsPhrase() {
+function WhyChooseUsPhraseSection() {
   return (
     <section className='flex flex-col justify-center w-full min-h-[344px] bg-gray px-4 lg2:px-20 2xl:px-48 3xl:px-60 py-4 relative'>
-      <PhraseTextGroup
+      <PhraseTextGroupComponent
         mainPhrase={CONTENT.mainPhrase}
         secondaryPhrase={CONTENT.secondaryPhrase}
       />
-      <DecorativeIconHolder
+      <DecorativeIconHolderComponent
         iconSrc={CONTENT.phoneIcon.src}
         iconAlt={CONTENT.phoneIcon.alt}
         wrapperClass={CONTENT.phoneIcon.wrapperClass}
       />
-      <DecorativeIconHolder
+      <DecorativeIconHolderComponent
         iconSrc={CONTENT.clockIcon.src}
         iconAlt={CONTENT.clockIcon.alt}
         wrapperClass={CONTENT.clockIcon.wrapperClass}
@@ -40,4 +40,4 @@ function WhyChooseUsPhrase() {
   );
 }
 
-export default WhyChooseUsPhrase;
+export default WhyChooseUsPhraseSection;

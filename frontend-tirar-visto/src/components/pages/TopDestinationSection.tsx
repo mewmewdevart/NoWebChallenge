@@ -63,7 +63,7 @@ const destinationData = [
 const firstRowDestinations = destinationData.slice(0, 3);
 const secondRowDestinations = destinationData.slice(3, 6);
 
-function TopDestination() {
+function TopDestinationSection() {
   return (
     <section className='flex flex-col bg-white pb-10 lg:pb-20'>
       <header className="h-[423px] w-full flex flex-col items-center justify-center" style={{
@@ -125,4 +125,4 @@ function TopDestination() {
   );
 }
 
-export default TopDestination;
+export default TopDestinationSection;

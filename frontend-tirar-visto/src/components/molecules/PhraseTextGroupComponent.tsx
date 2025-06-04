@@ -1,9 +1,9 @@
-interface PhraseTextGroupProps {
+interface PhraseTextGroupComponentProps {
   mainPhrase: string;
   secondaryPhrase: string;
 }
 
-function PhraseTextGroup({ mainPhrase, secondaryPhrase }: PhraseTextGroupProps) {
+function PhraseTextGroupComponent({ mainPhrase, secondaryPhrase }: PhraseTextGroupComponentProps) {
   return (
     <h2 className='font-medium text-[36px] sm:text-[44px] 2xl:text-[56px] leading-tight uppercase'> 
       <span className="block w-full lg:w-[854px]">
@@ -16,4 +16,4 @@ function PhraseTextGroup({ mainPhrase, secondaryPhrase }: PhraseTextGroupProps) 
   );
 }
 
-export default PhraseTextGroup;
+export default PhraseTextGroupComponent;

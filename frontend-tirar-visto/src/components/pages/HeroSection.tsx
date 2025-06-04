@@ -1,9 +1,9 @@
 
 import NavbarComponent from '@molecules/NavbarComponent'; 
-import StatItem from '@molecules/StatItem';
+import StatItemComponent from '@/components/molecules/StatItemComponent';
 
-import HeroContentBlock from '@organisms/HeroContentBlock';
-import HeroPromoAside from '@organisms/HeroPromoAside';
+import HeroContentBlock from '@/components/organisms/HeroContentBlockComponent';
+import HeroPromoAsideComponent from '@/components/organisms/HeroPromoAsideComponent';
 
 import logoTirarVistoSrc from '@assets/LogoTirarVisto.svg';
 import disneyFerrisWheelImageSrc from '@assets/images/roda-gigante-disney.webp';
@@ -70,13 +70,13 @@ function HeroSection({ menuItems }: HeroSectionProps) {
 
                     <div className='flex flex-row w-full mt-0 2xl:mt-10'>
                         {STATS_DATA.map((stat) => ( 
-                            <StatItem key={stat.label} value={stat.value} label={stat.label} />
+                            <StatItemComponent key={stat.label} value={stat.value} label={stat.label} />
                         ))}
                     </div>
                 </article>
             </div>
 
-            <HeroPromoAside
+            <HeroPromoAsideComponent
                 backgroundImageSrc={disneyFerrisWheelImageSrc}
                 badgeLabel={HERO_CONTENT.makeVisaButtonLabel}
                 title={HERO_CONTENT.aside.title}

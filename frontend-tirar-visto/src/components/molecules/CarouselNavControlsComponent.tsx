@@ -3,7 +3,7 @@ import ButtonComponent from '@atoms/ButtonComponent';
 import EastIcon from '@mui/icons-material/East';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-interface CarouselNavControlsMoleculeProps {
+interface CarouselNavControlsComponentProps {
   onPrev: () => void;
   onNext: () => void;
   isPrevDisabled: boolean;
@@ -12,14 +12,14 @@ interface CarouselNavControlsMoleculeProps {
   nextAriaLabel?: string;
 }
 
-function CarouselNavControlsMolecule({
+function CarouselNavControlsComponent({
   onPrev,
   onNext,
   isPrevDisabled,
   isNextDisabled,
   prevAriaLabel = "Pacote anterior",
   nextAriaLabel = "Próximo pacote", 
-}: CarouselNavControlsMoleculeProps): JSX.Element {
+}: CarouselNavControlsComponentProps): JSX.Element {
   return (
     <div className="flex gap-3 sm:gap-4 items-center">
       <ButtonComponent
@@ -43,4 +43,4 @@ function CarouselNavControlsMolecule({
     </div>
   );
 }
-export default CarouselNavControlsMolecule;
+export default CarouselNavControlsComponent;

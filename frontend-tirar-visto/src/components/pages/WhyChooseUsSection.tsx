@@ -22,7 +22,7 @@ const accordionItemsData = [
   }
 ];
 
-function WhyChooseUs() {
+function WhyChooseUsSection() {
   const [expandedPanelId, setExpandedPanelId] = React.useState<string | false>(false);
 
   const handleAccordionChange = (panelId: string) => (_: React.SyntheticEvent, isExpanding: boolean) => {
@@ -76,4 +76,4 @@ function WhyChooseUs() {
   )
 }
 
-export default WhyChooseUs;
+export default WhyChooseUsSection;

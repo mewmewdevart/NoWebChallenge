@@ -1,8 +1,8 @@
 import type { JSX } from 'react';
 
 import ButtonComponent from '@atoms/ButtonComponent';
-import TagListMolecule from '@molecules/TagListMolecule';
-import PackageDetailItemMolecule from '@molecules/PackageDetailItemMolecule';
+import TagListComponent from '@molecules/TagListComponent';
+import PackageDetailItemComponent from '@molecules/PackageDetailItemComponent';
 
 export interface PackageCardOrganismProps {
     id?: number; // For key and ARIA
@@ -15,7 +15,7 @@ export interface PackageCardOrganismProps {
     currency?: string;
 }
 
-function PackageCardOrganism({
+function PackageCardComponent({
     id,
     imageSrc,
     tags,
@@ -33,13 +33,13 @@ function PackageCardOrganism({
             aria-labelledby={titleId}
         >
             <img src={imageSrc} alt={title} loading="lazy" className="rounded-[18px] w-full h-[200px] sm:h-[240px] md:h-[280px] lg2:h-[300px] object-cover mb-4" />
-            <TagListMolecule tags={tags} />
+            <TagListComponent tags={tags} />
             <h6 id={titleId} className="font-semibold text-lg sm:text-xl md:text-2xl lg2:text-[28px] mb-3 leading-tight text-color-charcoal">
                 {title}
             </h6>
             <div className="flex justify-between mb-3 text-sm sm:text-base">
-                <PackageDetailItemMolecule label="Atendimento" value={atendimentoValor} />
-                <PackageDetailItemMolecule label="Tempo" value={tempoValor} />
+                <PackageDetailItemComponent label="Atendimento" value={atendimentoValor} />
+                <PackageDetailItemComponent label="Tempo" value={tempoValor} />
             </div>
             <hr className="border-light-gray mb-4" />
             <div className="flex items-center justify-between mt-auto">
@@ -60,4 +60,4 @@ function PackageCardOrganism({
         </article>
     );
 }
-export default PackageCardOrganism;
+export default PackageCardComponent;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import AnimatedHamburgerIcon from '@atoms/AnimatedHamburgerIcon';
+import AnimatedHamburgerIconComponent from '@atoms/AnimatedHamburgerIconComponent';
 
 export interface MenuItem {
   label: string;
@@ -135,7 +135,7 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
         </div>
 
         <div className="lg2:hidden flex items-center z-[70]">
-          <AnimatedHamburgerIcon
+          <AnimatedHamburgerIconComponent
             isOpen={isMobileMenuOpen}
             onClick={toggleMobileMenu}
             ariaLabel={isMobileMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}

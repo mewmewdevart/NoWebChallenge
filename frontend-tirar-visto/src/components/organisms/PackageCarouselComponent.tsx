@@ -1,23 +1,23 @@
 import type { JSX } from 'react';
-import PackageCardOrganism, { type PackageCardOrganismProps } from './PackageCardOrganism'; 
+import PackageCardComponent, { type PackageCardOrganismProps } from './PackageCardComponent'; 
 
 interface PackageItemDataForCarousel extends PackageCardOrganismProps {
     id: number;
 }
 
-interface PackageCarouselOrganismProps {
+interface PackageCarouselComponentProps {
   packages: PackageItemDataForCarousel[];
   currentIndex: number;
   cardsPerPage: number;
   totalCardsInDataset: number;
 }
 
-function PackageCarouselOrganism({
+function PackageCarouselComponent({
   packages,
   currentIndex,
   cardsPerPage,
   totalCardsInDataset,
-}: PackageCarouselOrganismProps): JSX.Element {
+}: PackageCarouselComponentProps): JSX.Element {
   const totalCardsToDisplay = packages.length;
 
   if (totalCardsToDisplay === 0) {
@@ -50,11 +50,11 @@ function PackageCarouselOrganism({
             role="group"
             aria-label={`Pacote ${index + 1} de ${totalCardsToDisplay}`}
           >
-            <PackageCardOrganism {...pkg} id={pkg.id} />
+            <PackageCardComponent {...pkg} id={pkg.id} />
           </div>
         ))}
       </div>
     </div>
   );
 }
-export default PackageCarouselOrganism;
+export default PackageCarouselComponent;

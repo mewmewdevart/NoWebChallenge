@@ -1,9 +1,9 @@
-import Footer from './components/pages/Footer';
+import FooterSection from './components/pages/FooterSection';
 import HeroSection from './components/pages/HeroSection'
-import SpecialPackage from './components/pages/SpecialPackage';
-import TopDestination from './components/pages/TopDestination';
-import WhyChooseUs from './components/pages/WhyChooseUs';
-import WhyChooseUsPhrase from './components/pages/WhyChooseUsPhrase';
+import SpecialPackageSection from './components/pages/SpecialPackageSection';
+import TopDestinationSection from './components/pages/TopDestinationSection';
+import WhyChooseUsSection from './components/pages/WhyChooseUsSection';
+import WhyChooseUsPhrase from './components/pages/WhyChooseUsPhraseSection';
 
 function App() {
     const menuItems = [
@@ -15,12 +15,12 @@ function App() {
 
   return (
     <>
-      {/* <HeroSection menuItems={menuItems} />
+      <HeroSection menuItems={menuItems} />
       <WhyChooseUsPhrase />
-      <WhyChooseUs /> 
-      <TopDestination /> */}
-      <SpecialPackage />
-      <Footer />
+      <WhyChooseUsSection /> 
+      <TopDestinationSection />
+      <SpecialPackageSection />
+      <FooterSection />
     </>
   )
 }

@@ -2,7 +2,7 @@ interface StatItemProps {
   value: string;
   label: string;
 }
-function StatItem({ value, label }: StatItemProps) {
+function StatItemComponent({ value, label }: StatItemProps) {
   return (
     <div className='w-full'> 
       <h2 className='text-[44px]'>{value}</h2>
@@ -10,4 +10,4 @@ function StatItem({ value, label }: StatItemProps) {
     </div>
   );
 }
-export default StatItem;
+export default StatItemComponent;

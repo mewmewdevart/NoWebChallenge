@@ -8,7 +8,7 @@ interface HeroPromoAsideProps {
   ariaTitleId: string; 
 }
 
-function HeroPromoAside({ backgroundImageSrc, badgeLabel, title, description, ariaTitleId }: HeroPromoAsideProps) {
+function HeroPromoAsideComponent({ backgroundImageSrc, badgeLabel, title, description, ariaTitleId }: HeroPromoAsideProps) {
   return (
     <aside
       className="w-full hidden lg2:flex flex-col items-start text-white justify-between rounded-[24px] max-w-[762px]"
@@ -37,4 +37,4 @@ function HeroPromoAside({ backgroundImageSrc, badgeLabel, title, description, ar
     </aside>
   );
 }
-export default HeroPromoAside;
+export default HeroPromoAsideComponent;

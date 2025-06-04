@@ -1,11 +1,11 @@
 import type { JSX } from 'react';
 import BadgeComponent from '@atoms/BadgeComponent';
 
-interface TagListMoleculeProps {
+interface TagListComponentProps {
   tags: string[];
 }
 
-function TagListMolecule({ tags }: TagListMoleculeProps): JSX.Element {
+function TagListComponent({ tags }: TagListComponentProps): JSX.Element {
   return (
     <div className="flex flex-row flex-wrap mt-4 mb-3 gap-2"> 
       {tags.map(tag => {
@@ -34,4 +34,4 @@ function TagListMolecule({ tags }: TagListMoleculeProps): JSX.Element {
     </div>
   );
 }
-export default TagListMolecule;
+export default TagListComponent;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface AnimatedHamburgerIconProps {
+interface AnimatedHamburgerIconComponentProps {
   isOpen: boolean;
   onClick: () => void;
   ariaLabel?: string;
@@ -9,7 +9,7 @@ interface AnimatedHamburgerIconProps {
   className?: string; 
 }
 
-const AnimatedHamburgerIcon: React.FC<AnimatedHamburgerIconProps> = ({
+const AnimatedHamburgerIconComponent: React.FC<AnimatedHamburgerIconComponentProps> = ({
   isOpen,
   onClick,
   ariaLabel = "Abrir menu de navegação",
@@ -50,4 +50,4 @@ const AnimatedHamburgerIcon: React.FC<AnimatedHamburgerIconProps> = ({
   );
 };
 
-export default AnimatedHamburgerIcon;
+export default AnimatedHamburgerIconComponent;
