@@ -219,7 +219,7 @@ function SpecialPackage(): JSX.Element {
                         variant={effectivePrevDisabled ? "ghost" : "outlineDarkBlue"}
                         size="large"
                         className={`rounded-[40px] h-[48px] w-[48px] sm:h-[54px] sm:w-[54px] p-0 flex items-center justify-center transition-all duration-300 ease-in-out ${effectivePrevDisabled ? 'opacity-70 cursor-not-allowed' : 'hover:bg-dark-blue/10'}`}
-                        aria-label="Pacote anterior"
+                        ariaLabel="Pacote anterior"
                         rightIcon={<ArrowBackIcon className={`w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] ${effectivePrevDisabled ? 'text-gray-400' : 'text-dark-blue'}`} />}
                     />
                     <ButtonComponent
@@ -228,7 +228,7 @@ function SpecialPackage(): JSX.Element {
                         variant={effectiveNextDisabled ? "ghost" : "fullDarkBlue"}
                         size="large"
                         className={`rounded-[40px] h-[48px] w-[48px] sm:h-[54px] sm:w-[54px] p-0 flex items-center justify-center transition-all duration-300 ease-in-out ${effectiveNextDisabled ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'}`}
-                        aria-label="Próximo pacote"
+                        ariaLabel="Próximo pacote"
                         rightIcon={<EastIcon className={`w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] ${effectiveNextDisabled ? 'text-gray-400' : 'text-white'}`} />}
                     />
                 </div>

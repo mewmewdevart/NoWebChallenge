@@ -10,6 +10,7 @@ interface ButtonComponentProps extends Omit<NativeButtonProps, 'ref'> {
   variant: 'fullDarkBlue' | 'outlineDarkBlue' | 'fullYellow' | 'ghost';
   size?: 'large' | 'small';
   type?: 'button' | 'submit' | 'reset';
+  ariaLabel?: string;
 }
 
 const buttonStyles = {
@@ -43,6 +44,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonComponentProps>(
       variant = 'fullDarkBlue',
       size = 'large',
       type = 'button',
+      ariaLabel = '',
     },
     ref
   ) => {
@@ -51,7 +53,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonComponentProps>(
         type={type}
         disabled={disabled}
         aria-disabled={disabled}
-        aria-label={typeof label === 'string' ? label : undefined}
+        aria-label={ariaLabel}
         className={twMerge(
           buttonStyles[variant as keyof typeof buttonStyles][size as 'large' | 'small'],
           'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark-blue',

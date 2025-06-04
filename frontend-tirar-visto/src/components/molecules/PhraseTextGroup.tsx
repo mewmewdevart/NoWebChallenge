@@ -5,7 +5,7 @@ interface PhraseTextGroupProps {
 
 function PhraseTextGroup({ mainPhrase, secondaryPhrase }: PhraseTextGroupProps) {
   return (
-    <h2 className='font-medium uppercase text-4xl lg:text-[56px]'> 
+    <h2 className='font-medium text-[36px] sm:text-[44px] 2xl:text-[56px] leading-tight uppercase'> 
       <span className="block w-full lg:w-[854px]">
         {mainPhrase}
       </span>

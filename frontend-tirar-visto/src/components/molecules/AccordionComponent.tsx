@@ -4,15 +4,13 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
-import ButtonComponent from '@atoms/ButtonComponent';
 
 interface AccordionComponentProps {
   panelId: string;
   title?: string;
   description?: string;
   expanded: boolean;
-  onChange: (event: React.SyntheticEvent, isExpanding: boolean) => void; 
-  
+  onChange: (event: React.SyntheticEvent, isExpanding: boolean) => void;
 }
 
 export default function AccordionComponent({
@@ -20,9 +18,8 @@ export default function AccordionComponent({
   title,
   description,
   expanded,
-  onChange 
+  onChange,
 }: AccordionComponentProps) {
-
   const handleDetailsClickToClose = () => {
     if (expanded) {
       onChange({} as React.SyntheticEvent, false);
@@ -49,7 +46,7 @@ export default function AccordionComponent({
             padding: { xs: '6px 0px', sm: '8px 0px' },
             '& .MuiAccordionSummary-content': {
               margin: 0,
-            }
+            },
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '100%' }}>
@@ -71,13 +68,13 @@ export default function AccordionComponent({
               {title}
             </Typography>
             {!expanded && (
-              <ButtonComponent
-                label="Leia mais"
-                variant="ghost"
-                size="small"
-                leftIcon={<AddIcon className='text-charcoal' sx={{ fontSize: { xs: '1.1rem', md: '1.2rem' } }} />}
-                className='text-charcoal font-medium rounded-[40px] w-fit px-0 py-0 min-w-fit mt-1 sm:mt-2'
-              />
+              <div
+                className="text-charcoal font-medium rounded-[40px] w-fit px-0 py-0 min-w-fit mt-1 sm:mt-2"
+                style={{ display: 'flex', alignItems: 'center' }}
+              >
+                <AddIcon className="text-charcoal" sx={{ fontSize: { xs: '1.1rem', md: '1.2rem' }, mr: 0.5 }} />
+                Leia mais
+              </div>
             )}
           </div>
         </AccordionSummary>
@@ -85,7 +82,7 @@ export default function AccordionComponent({
           paddingLeft: '0px',
           paddingRight: '0px',
           paddingTop: { xs: '8px', sm: '12px' },
-          paddingBottom: { xs: '16px', sm: '20px' }
+          paddingBottom: { xs: '16px', sm: '20px' },
         }}>
           <Typography
             className="text-base text-silver"

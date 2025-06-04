@@ -44,7 +44,7 @@ function HeroContentBlock({ title, description, learnMoreButtonLabel, imageSrc, 
             <ButtonComponent
               variant="fullDarkBlue"
               size="large"
-              aria-label={playButtonAriaLabel}
+              ariaLabel={playButtonAriaLabel}
               className='rounded-[40px] h-[36px] w-[36px] p-0 flex items-center justify-center'
               rightIcon={<EastIcon className='text-white' />}
             />

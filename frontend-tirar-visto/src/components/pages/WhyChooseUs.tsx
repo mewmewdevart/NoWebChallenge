@@ -30,7 +30,7 @@ function WhyChooseUs() {
   };
 
   return (
-    <section className='flex flex-col w-full px-4 lg2:px-20 2xl:px-48 3xl:px-60 py-20'>
+    <section className='flex flex-col w-full px-4 lg2:px-20 2xl:px-48 3xl:px-60 py-10 lg:py-20'>
       <BadgeComponent
         label="Veja como funciona"
         variant="fullYellow"
