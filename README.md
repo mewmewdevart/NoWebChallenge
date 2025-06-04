@@ -71,7 +71,7 @@ O website implementa integralmente o layout proposto no Figma, incluindo:
 * **Design Responsivo:** Adaptação completa da interface para diferentes tamanhos de tela, conforme solicitado.
 * **Interatividade:** Componentes como carrosséis (destinos e pacotes) e acordeões para apresentação de informações.
 
-**
+**Recursos Adicionais (Plus):**
 
 * **Otimização SEO:** Implementação de meta tags detalhadas e dados estruturados (JSON-LD) no `index.html` para melhor indexação e apresentação nos motores de busca + LazyLoading e Minificação das imagens.
 * **Fundamentos Sólidos de Acessibilidade:** Além da conformidade básica, foram implementados recursos como skip links e atenção à semântica e ARIA.
