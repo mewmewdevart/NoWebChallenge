@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import AnimatedHamburgerIcon from '../atoms/AnimatedHamburgerIcon';
+import AnimatedHamburgerIcon from '@atoms/AnimatedHamburgerIcon';
 
 export interface MenuItem {
   label: string;

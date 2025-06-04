@@ -4,7 +4,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
-import ButtonComponent from '../atoms/ButtonComponent';
+import ButtonComponent from '@atoms/ButtonComponent';
 
 export default function AccordionComponent({ title, description }: { title?: string, description?: string }) {
   const panelId = title ? `${title.replace(/\s+/g, '-').toLowerCase()}` : 'custom-accordion';

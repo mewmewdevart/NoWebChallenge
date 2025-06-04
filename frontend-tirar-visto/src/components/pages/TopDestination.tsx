@@ -1,4 +1,3 @@
-import React from 'react';
 import detailBGImageSrc from '../../assets/images/detailBG2.png';
 import ButtonComponent from '../atoms/ButtonComponent';
 
@@ -126,7 +125,6 @@ function TopDestination() {
                   alt={destination.alt}
                   width={destination.width}
                   height={destination.height}
-                  // Adicionado w-full e removido classes de transição que estavam apenas aqui para consistência
                   className="w-full object-cover rounded-lg"
                   loading="lazy"
                 />

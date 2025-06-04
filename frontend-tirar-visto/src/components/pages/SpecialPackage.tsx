@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import type { JSX } from 'react';
-import ButtonComponent from "../atoms/ButtonComponent"; 
+import ButtonComponent from "@atoms/ButtonComponent"; 
 import EastIcon from '@mui/icons-material/East';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-import PassaportImageSrc from '../../assets/images/tirar-visto-passaport.png';
-import TakePassaportImageSrc from '../../assets/images/tirar-visto-pegando-passaport.png';
-import ConsultImageSrc from '../../assets/images/tirar-visto-consultoria.png';
+import PassaportImageSrc from '@assets/images/tirar-visto-passaport.png';
+import TakePassaportImageSrc from '@assets/images/tirar-visto-pegando-passaport.png';
+import ConsultImageSrc from '@assets/images/tirar-visto-consultoria.png';
 
 interface PackageItem {
     id: number;

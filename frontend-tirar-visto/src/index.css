@@ -15,10 +15,32 @@
   --color-linear-gradient: transparent; /* Placeholder: "Linear" represents a CSS gradient, not a solid color. */
   --color-dark-gray: #282828;
   --color-yellow: #F6C010;
+  --color-orange-hover: #F97316;
 
-  --breakpoint-lg2: 71.9375rem; 
+  --breakpoint-lg2: 71.9375rem;
 }
 
 :root {
   @apply text-base font-inter text-charcoal bg-white;
+}
+
+::selection {
+  @apply bg-yellow text-charcoal;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-light-gray;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-yellow;
+  border-radius: 20px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-orange-hover ; 
 }

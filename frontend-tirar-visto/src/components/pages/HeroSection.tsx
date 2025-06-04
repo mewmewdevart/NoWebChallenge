@@ -1,9 +1,13 @@
-import logoTirarVistoSrc from '../../assets/LogoTirarVisto.svg';
-import disneyFerrisWheelImageSrc from '../../assets/images/roda-gigante-disney.png';
-import interviewPlaceholderImageSrc from '../../assets/images/video-funcionaria-tirar-visto.png';
-import ButtonComponent from '../atoms/ButtonComponent';
-import NavbarComponent from '../molecules/NavbarComponent';
-import EastIcon from '@mui/icons-material/East';
+
+import NavbarComponent from '@molecules/NavbarComponent'; 
+import StatItem from '@molecules/StatItem';
+
+import HeroContentBlock from '@organisms/HeroContentBlock';
+import HeroPromoAside from '@organisms/HeroPromoAside';
+
+import logoTirarVistoSrc from '@assets/LogoTirarVisto.svg';
+import disneyFerrisWheelImageSrc from '@assets/images/roda-gigante-disney.webp';
+import interviewPlaceholderImageSrc from '@assets/images/video-funcionaria-tirar-visto.webp';
 
 interface NavigationMenuItem {
     label: string;
@@ -40,87 +44,45 @@ const STATS_DATA = [
 ];
 
 function HeroSection({ menuItems }: HeroSectionProps) {
+    const asideTitleId = "hero-aside-title"; 
+
     return (
         <section className='flex justify-center gap-x-4 2xl:gap-0 flex-row lg:min-h-screen w-full px-4 lg2:px-20 2xl:px-48 3xl:px-60 py-4'>
-            <div className='w-full flex flex-col'>
+            <div className='w-full flex flex-col '>
                 <NavbarComponent
                     logoSrc={logoTirarVistoSrc}
                     logoAlt="Logo da empresa TirarVisto"
                     menuItems={menuItems}
                 />
-                <article className='flex-grow w-full lg2:w-[580px] 2xl:w-full lg2:px-0 2xl:pr-4 flex flex-col gap-y-4 lg:gap-y-10 '>
-                    <h1 className='text-5xl lg:text-[54px] 2xl:text-7xl font-medium tracking-[-1px] lg:leading-[65px]'>
-                        {HERO_CONTENT.title}
-                    </h1>
-                    <hr className='text-light-gray' />
-
-                    <div className='flex w-full flex-col md:flex-row gap-2 2xl:gap-4'>
-                        <div className='flex flex-col gap-10'>
-                            <p className="text-silver w-full leading-relaxed hyphens-auto">
-                                {HERO_CONTENT.description}
-                            </p>
-                            <ButtonComponent
-                                label={HERO_CONTENT.learnMoreButtonLabel}
-                                variant="fullDarkBlue"
-                                size="large"
-                                className='font-semibold py-2.5 px-5 rounded-[40px] w-[160px] mb-4'
-                                rightIcon={<EastIcon className='text-white' />}
-                            />
-                        </div>
-
-                        <div className='min-w-[300px] lg2:min-w-[191px] flex flex-col justify-end gap-y-4'>
-                            <img src={interviewPlaceholderImageSrc} alt={HERO_CONTENT.videoSection.imageAlt} />
-                            <div className='flex items-center justify-between'>
-                                <div>
-                                    <p className='flex font-semibold text-base'>{HERO_CONTENT.videoSection.title}</p>
-                                    <span className='text-xs text-silver'>{HERO_CONTENT.videoSection.watchVideoText}</span>
-                                </div>
-                                <ButtonComponent
-                                    variant="fullDarkBlue"
-                                    size="large"
-                                    className='rounded-[40px] h-[36px] w-[36px] p-0 flex items-center justify-center'
-                                    rightIcon={<EastIcon className='text-white' />}
-                                />
-                            </div>
-                        </div>
+                <article className='flex-grow w-full lg2:px-0 2xl:pr-4 flex flex-col gap-y-4 2xl:gap-y-10 '>
+                    <div className='flex w-full flex-col md:flex-row '>
+                        <HeroContentBlock
+                            title={HERO_CONTENT.title}
+                            description={HERO_CONTENT.description}
+                            learnMoreButtonLabel={HERO_CONTENT.learnMoreButtonLabel}
+                            imageSrc={interviewPlaceholderImageSrc}
+                            imageAlt={HERO_CONTENT.videoSection.imageAlt}
+                            titleSection={HERO_CONTENT.videoSection.title}
+                            watchText={HERO_CONTENT.videoSection.watchVideoText}
+                            playButtonAriaLabel={HERO_CONTENT.videoSection.playButtonAriaLabel}
+                        />
                     </div>
 
                     <div className='flex flex-row w-full mt-0 2xl:mt-10'>
-                        {STATS_DATA.map((stat, index) => (
-                            <div key={index} className='w-full'>
-                                <h2 className='text-[44px]'>{stat.value}</h2>
-                                <span className='text-silver text-base'>{stat.label}</span>
-                            </div>
+                        {STATS_DATA.map((stat) => ( 
+                            <StatItem key={stat.label} value={stat.value} label={stat.label} />
                         ))}
                     </div>
                 </article>
             </div>
 
-            <aside
-                className="w-full hidden lg2:flex flex-col items-start text-white justify-between rounded-[24px] max-w-[762px]"
-                style={{
-                    backgroundImage: `url(${disneyFerrisWheelImageSrc})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                }}
-                aria-labelledby="aside-title"
-            >
-                <div className='flex items-end justify-end w-full px-3.5 pt-3.5 '>
-                    <ButtonComponent
-                    label={HERO_CONTENT.makeVisaButtonLabel}
-                    variant="fullYellow"
-                    size="small"
-                    className='font-semibold py-2.5 px-5 rounded-[40px] w-fit mb-4 text-dark-blue h-[44px]'
-                />
-                </div>
-                <div className='px-10 pb-10 flex flex-col gap-y-2 w-[540px] 2xl:w-[622px]'>
-                    <h2 id="aside-title" className='text-4xl 2xl:text-[44px] font-semibold tracking-[-2px] leading-[60px]'>
-                        {HERO_CONTENT.aside.title}
-                    </h2>
-                    <p>{HERO_CONTENT.aside.description}</p>
-                </div>
-            </aside>
+            <HeroPromoAside
+                backgroundImageSrc={disneyFerrisWheelImageSrc}
+                badgeLabel={HERO_CONTENT.makeVisaButtonLabel}
+                title={HERO_CONTENT.aside.title}
+                description={HERO_CONTENT.aside.description}
+                ariaTitleId={asideTitleId}
+            />
         </section>
     );
 }
