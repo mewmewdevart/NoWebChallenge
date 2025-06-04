@@ -186,6 +186,7 @@ Considerações para Evolução (com mais tempo):**
 5.  **Acesse a aplicação:**
     Abra o navegador e acesse:
     ```
+    // Verifique se a porta já não está sendo usada 
     http://localhost:5173
     ```
 
