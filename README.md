@@ -191,6 +191,23 @@ Considerações para Evolução (com mais tempo):**
 
 ## 🖼️ Visão Geral da Aplicação
 
+Printscreen completo (Desktop):
+
+![screencapture-localhost-5173-2025-06-04-03_12_10](https://github.com/user-attachments/assets/faa6baff-f1d6-4584-8d6e-a5ecd3409713)
+
+Printscreen completo (Mobile):
+
+![Gravacao da aplicação](https://github.com/user-attachments/assets/fc8048d7-3dd4-4a00-aba0-9dd01bd058cf)
+
+Video de todo o projeto:
+- Passagem pela acessibilidade do SkipToContent
+- Passagem pela acessibilidade dos Botoes
+- Interações e "animações breves"
+- Coesão do Design
+- Responsividade
+
+[Screencast from 2025-06-04 03-31-47.webm](https://github.com/user-attachments/assets/6f923463-e9a9-4e0c-b866-7e22b5a8e592)
+
 
 ## 🛠️ Tecnologias Utilizadas
 
