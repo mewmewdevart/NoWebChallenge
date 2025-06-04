@@ -1,6 +1,8 @@
+import React from 'react';
 import detailBGImageSrc from '../../assets/images/detailBG2.png';
 import ButtonComponent from '../atoms/ButtonComponent';
 
+// Importações das imagens dos destinos
 import baliImageSrc from '../../assets/images/tirar-visto-bali-indonesia.png';
 import cidadeCaboImageSrc from '../../assets/images/tirar-visto-cidade-do-cabo-africa-do-sul.png';
 import mumbaiImageSrc from '../../assets/images/tirar-visto-mumbai-india.png';
@@ -8,14 +10,15 @@ import novaYorkImageSrc from '../../assets/images/tirar-visto-nova-york-eua.png'
 import parisImageSrc from '../../assets/images/tirar-visto-paris-franca.png';
 import santoriniImageSrc from '../../assets/images/tirar-visto-santorini-grecia.png';
 
+// Dados dos destinos com informações para SEO e dimensões
 const destinationData = [
   {
     id: 'bali-indonesia',
     src: baliImageSrc,
     alt: 'Paisagem tropical exuberante de Bali, Indonésia, um destino turístico popular.',
     name: 'Bali, Indonésia',
-    width: 280, 
-    height: 240,
+    width: 280, // Usado para md:w-[280px] e atributo width da img
+    height: 240, // Usado para atributo height da img
   },
   {
     id: 'nova-york-eua',
@@ -89,17 +92,21 @@ function TopDestination() {
 
       <section className="w-full px-4 lg2:px-20 2xl:px-48 3xl:px-60 -mt-4">
         <div className=" mx-auto flex flex-col gap-5">
+          {/* Primeira Linha de Destinos */}
           <div className="flex flex-wrap justify-center items-start gap-5">
             {firstRowDestinations.map((destination) => (
               <div 
                 key={destination.id} 
+                // Aplicando w-full por padrão e md:w-[largura específica] para telas médias e maiores
+                // As classes flex, items-center, text-center são mantidas caso você adicione texto dentro deste div no futuro.
                 className={`w-full md:w-[${destination.width}px] flex flex-col items-center text-center`}
               >
                 <img
                   src={destination.src}
                   alt={destination.alt}
-                  width={destination.width}
-                  height={destination.height}
+                  width={destination.width} // Para SEO, CLS e aspect ratio com object-cover
+                  height={destination.height} // Para SEO, CLS e aspect ratio com object-cover
+                  // Adicionado w-full para a imagem preencher o contêiner responsivo
                   className="w-full object-cover rounded-lg"
                   loading="lazy"
                 />
@@ -107,6 +114,7 @@ function TopDestination() {
             ))}
           </div>
 
+          {/* Segunda Linha de Destinos */}
           <div className="flex flex-wrap justify-center items-start gap-5">
             {secondRowDestinations.map((destination) => (
               <div 
@@ -118,6 +126,7 @@ function TopDestination() {
                   alt={destination.alt}
                   width={destination.width}
                   height={destination.height}
+                  // Adicionado w-full e removido classes de transição que estavam apenas aqui para consistência
                   className="w-full object-cover rounded-lg"
                   loading="lazy"
                 />

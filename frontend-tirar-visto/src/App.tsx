@@ -1,3 +1,4 @@
+import Footer from './components/pages/Footer';
 import HeroSection from './components/pages/HeroSection'
 import SpecialPackage from './components/pages/SpecialPackage';
 import TopDestination from './components/pages/TopDestination';
@@ -19,6 +20,7 @@ function App() {
       <WhyChooseUs />
       <TopDestination />
       <SpecialPackage />
+      <Footer />
     </>
   )
 }
