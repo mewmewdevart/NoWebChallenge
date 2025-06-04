@@ -27,7 +27,7 @@ const CARDS_TO_SHOW_DESKTOP: number = 3;
 const CARDS_TO_SHOW_MOBILE: number = 1;
 const MOBILE_BREAKPOINT: number = 1151;
 
-function SpecialPackageSection(): JSX.Element {
+function SpecialPackageSection({ id, tabIndex }: { id: string, tabIndex: number }): JSX.Element {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [cardsPerPage, setCardsPerPage] = useState<number>(CARDS_TO_SHOW_DESKTOP);
     const totalCards: number = packagesData.length;
@@ -75,6 +75,8 @@ function SpecialPackageSection(): JSX.Element {
 
     return (
         <section
+            id={id}
+            tabIndex={tabIndex}
             className='flex flex-col w-full px-4 lg2:px-20 2xl:px-48 3xl:px-60 pt-8 lg2:py-20'
             aria-labelledby={sectionTitleId}
         >

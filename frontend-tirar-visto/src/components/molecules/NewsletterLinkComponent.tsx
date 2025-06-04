@@ -10,7 +10,7 @@ interface NewsletterLinkComponentProps {
 function NewsletterLinkComponent({ headingId, title, href }: NewsletterLinkComponentProps): JSX.Element {
   return (
     <section aria-labelledby={headingId} className="w-full md:w-auto">
-      <a href={href} className="group block md:w-[500px] py-3"> 
+      <a href={href} className="group block md:w-[500px] py-3 focus-visible:outline-none focus-visible:px-2 focus-visible:py-1 focus-visible:border-dark-blue focus-visible:border-4 focus-visible:border-dashed"> 
         <div className="flex justify-between items-center w-full">
           <h3 id={headingId} className="text-[28px] sm:text-[32px] md:text-[40px] text-color-charcoal group-hover:text-charcoal transition-colors duration-300">
             {title}

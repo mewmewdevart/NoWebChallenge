@@ -34,7 +34,7 @@ function PackageCarouselComponent({
   return (
     <div className="relative w-full overflow-hidden" role="region" aria-label="Carrossel de pacotes">
       <div
-        className="flex transition-transform duration-500 ease-in-out"
+        className="flex transition-transform duration-500 ease-in-out "
         style={{
           width: trackWidth,
           transform: transformX,
@@ -43,7 +43,7 @@ function PackageCarouselComponent({
         {packages.map((pkg, index) => (
           <div
             key={pkg.id}
-            className="p-2"
+            className="p-2 "
             style={{
               flex: totalCardsInDataset > 0 ? `0 0 ${(100 / totalCardsInDataset)}%` : '0 0 100%',
             }}

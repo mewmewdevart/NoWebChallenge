@@ -93,7 +93,7 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
           {logoHref ? (
             <a
               href={logoHref}
-              className="transition-opacity duration-200 ease-in-out hover:opacity-75"
+              className="transition-opacity duration-200 ease-in-out hover:opacity-75 focus-visible:outline-none focus-visible:px-2 focus-visible:py-1 focus-visible:border-dark-blue focus-visible:border-4 focus-visible:border-dashed"
               aria-label={
                 logoAlt +
                 (logoAlt.toLowerCase().includes('logotipo') ||
@@ -112,10 +112,10 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({
         <div className="hidden lg2:flex items-center bg-red-500-">
           <ul id="navbar-menu-desktop" className="flex items-center justify-between">
             {menuItems.map((item, index) => (
-              <li key={index} className="min-w-fit text-center">
+              <li key={index} className="min-w-fit text-center ">
                 <a
                   href={item.href}
-                  className={`px-3 text-sm transition-all duration-200 ease-in-out group relative
+                  className={`px-3 text-sm transition-all duration-200 ease-in-out group relative focus-visible:outline-none focus-visible:px-2 focus-visible:py-1 focus-visible:border-dark-blue focus-visible:border-4 focus-visible:border-dashed
                               ${item.isCurrent
                                 ? 'text-charcoal font-semibold'
                                 : 'text-charcoal hover:font-semibold'

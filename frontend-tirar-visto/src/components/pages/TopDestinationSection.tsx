@@ -92,7 +92,7 @@ function TopDestinationSection() {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-start gap-6 lg:gap-8 mb-6 lg:mb-8">
             {firstRowDestinations.map((destination) => (
-              <div key={destination.id} className="flex flex-col items-center text-center" style={{ width: `${destination.width}px` }}>
+              <div key={destination.id} className="flex flex-col items-center text-center " style={{ width: `${destination.width}px` }}>
                 <img
                   src={destination.src}
                   alt={destination.alt} 

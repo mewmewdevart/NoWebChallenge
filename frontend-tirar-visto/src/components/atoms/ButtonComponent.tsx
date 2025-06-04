@@ -57,7 +57,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonComponentProps>(
         aria-label={ariaLabel}
         className={twMerge(
           buttonStyles[variant as keyof typeof buttonStyles][size as 'large' | 'small'],
-          'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark-blue',
+          'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark-blue ',
           className
         )}
         onClick={onClick}

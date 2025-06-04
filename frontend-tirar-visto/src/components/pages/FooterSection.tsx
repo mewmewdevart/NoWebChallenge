@@ -36,12 +36,12 @@ const socialBadgesData = [
   { label: "Youtube", href: "#yt", originalClasses: "text-charcoal min-w-[118px] min-h-[40px]" },
 ];
 
-function FooterSection(): JSX.Element {
-  const commonLinkClasses = "text-silver hover:text-charcoal transition-colors duration-150 ease-in-out text-sm";
+function FooterSection({ id, tabIndex }: { id: string, tabIndex?:number }): JSX.Element {
+  const commonLinkClasses = "text-silver hover:text-charcoal transition-colors duration-150 ease-in-out text-sm focus-visible:outline-none focus-visible:px-2 focus-visible:py-1 focus-visible:border-dark-blue focus-visible:border-4 focus-visible:border-dashed";
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='flex flex-col justify-center w-full px-4 lg2:px-20 2xl:px-48 3xl:px-60 pt-8 lg2:pt-20'>
+    <footer id={id} tabIndex={tabIndex} className='flex flex-col justify-center w-full px-4 lg2:px-20 2xl:px-48 3xl:px-60 pt-8 lg2:pt-20'>
       <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-10 md:gap-8 mb-10 md:mb-12">
         <ContactPromptComponent
           headingId="contact-heading"
