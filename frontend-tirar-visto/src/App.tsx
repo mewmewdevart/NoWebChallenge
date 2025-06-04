@@ -15,10 +15,10 @@ function App() {
 
   return (
     <>
-      <HeroSection menuItems={menuItems} />
+      {/* <HeroSection menuItems={menuItems} />
       <WhyChooseUsPhrase />
-      <WhyChooseUs />
-      <TopDestination />
+      <WhyChooseUs /> 
+      <TopDestination /> */}
       <SpecialPackage />
       <Footer />
     </>
