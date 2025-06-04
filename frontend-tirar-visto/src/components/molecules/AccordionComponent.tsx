@@ -6,17 +6,26 @@ import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
 import ButtonComponent from '@atoms/ButtonComponent';
 
-export default function AccordionComponent({ title, description }: { title?: string, description?: string }) {
-  const panelId = title ? `${title.replace(/\s+/g, '-').toLowerCase()}` : 'custom-accordion';
-  const [isExpanded, setIsExpanded] = React.useState(false);
+interface AccordionComponentProps {
+  panelId: string;
+  title?: string;
+  description?: string;
+  expanded: boolean;
+  onChange: (event: React.SyntheticEvent, isExpanding: boolean) => void; 
+  
+}
 
-  const handleAccordionChange = (_: React.SyntheticEvent, newExpandedState: boolean) => {
-    setIsExpanded(newExpandedState);
-  };
+export default function AccordionComponent({
+  panelId,
+  title,
+  description,
+  expanded,
+  onChange 
+}: AccordionComponentProps) {
 
   const handleDetailsClickToClose = () => {
-    if (isExpanded) {
-      setIsExpanded(false);
+    if (expanded) {
+      onChange({} as React.SyntheticEvent, false);
     }
   };
 
@@ -30,8 +39,8 @@ export default function AccordionComponent({ title, description }: { title?: str
             display: 'none',
           },
         }}
-        expanded={isExpanded}
-        onChange={handleAccordionChange}
+        expanded={expanded}
+        onChange={onChange}
       >
         <AccordionSummary
           aria-controls={`${panelId}-content`}
@@ -50,9 +59,10 @@ export default function AccordionComponent({ title, description }: { title?: str
                 fontWeight: 'medium',
                 fontSize: {
                   xs: '28px',
-                  sm: '34px',
-                  md: '38px',
-                  lg: '44px'
+                  sm: '28px',
+                  md: '28px',
+                  lg: '32px',
+                  xl: '44px',
                 },
                 color: '#232323',
                 lineHeight: 1.2,
@@ -60,7 +70,7 @@ export default function AccordionComponent({ title, description }: { title?: str
             >
               {title}
             </Typography>
-            {!isExpanded && (
+            {!expanded && (
               <ButtonComponent
                 label="Leia mais"
                 variant="ghost"
@@ -81,7 +91,7 @@ export default function AccordionComponent({ title, description }: { title?: str
             className="text-base text-silver"
             sx={{
               lineHeight: '1.6',
-              cursor: isExpanded ? 'pointer' : 'default',
+              cursor: expanded ? 'pointer' : 'default',
             }}
             onClick={handleDetailsClickToClose}
           >
