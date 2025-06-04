@@ -191,15 +191,19 @@ Considerações para Evolução (com mais tempo):**
 
 ## 🖼️ Visão Geral da Aplicação
 
-Printscreen completo (Desktop):
+<details><summary> 📷 Printscreen completo (Desktop)</summary>
+  
+![Wektop](https://github.com/user-attachments/assets/faa6baff-f1d6-4584-8d6e-a5ecd3409713)
 
-![screencapture-localhost-5173-2025-06-04-03_12_10](https://github.com/user-attachments/assets/faa6baff-f1d6-4584-8d6e-a5ecd3409713)
+</details>
 
-Printscreen completo (Mobile):
+<details><summary>📷 Printscreen completo (Mobile)</summary>
+  
+![MObile](https://github.com/user-attachments/assets/fc8048d7-3dd4-4a00-aba0-9dd01bd058cf)
 
-![Gravacao da aplicação](https://github.com/user-attachments/assets/fc8048d7-3dd4-4a00-aba0-9dd01bd058cf)
+</details>
 
-Video de todo o projeto:
+🎥 Video de todo o projeto (gravação rapida):
 - Passagem pela acessibilidade do SkipToContent
 - Passagem pela acessibilidade dos Botoes
 - Interações e "animações breves"
@@ -243,7 +247,7 @@ Video de todo o projeto:
 * [TinyPNG(Minificação do peso das imagens)](https://tinypng.com/)
 * [PNG-Converter(Conversão dos pngs em webp)](https://cloudconvert.com/png-converter)
 
-## 👩🏿 Experiência
+## 👩🏿 Experiência (Tom mais informal)
 
 Foi tranquilo e gostoso de fazer o desafio. Me diverti enquanto criava cada pedaço da interface, vendo os elementos sairem do Figma e ganharem vida no codigo. Pude fortalecer os meus conhecimento em :
 * **React e Atomic Design:** Consegui aplicar o Atomic Design na prática para organizar os componentes, o que deixou tudo mais ajeitadinho e fácil de mexer depois.
