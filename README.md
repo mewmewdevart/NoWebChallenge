@@ -2,8 +2,6 @@
   <img src="https://github.com/user-attachments/assets/e413c89b-198b-469c-9443-6a243e30917e" alt="TirarVisto Logo" style="width: 120px;">
 </p>
 
-
-
 <h1 align="center">Frontend TirarVisto - Desafio Técnico NoWeb Publicidade</h1>
 
 <p align="center">
@@ -15,6 +13,17 @@
   <img src="https://img.shields.io/badge/Vite-6.3-purple?logo=vite" alt="Vite">
   <img src="https://img.shields.io/badge/TailwindCSS-4.1-blue?logo=tailwindcss" alt="Tailwind CSS">
 </p>
+
+> [!WARNING]
+> Este projeto foi desenvolvido como um desafio técnico para a vaga de Desenvolvedor(a) Front-End da **NoWeb Publicidade**.
+>
+> **Aviso Importante sobre o Processo Seletivo:**
+>
+> A experiência com o processo seletivo foi extremamente negativa e desrespeitosa. Após a entrega do projeto em junho, a empresa prometeu um retorno em uma semana, mas o feedback só chegou mais de dois meses depois, através de uma resposta genérica e sem nenhuma avaliação sobre o trabalho entregue.
+>
+> Este aviso tem como objetivo alertar outros desenvolvedores que pesquisam sobre os desafios técnicos da **NoWeb**. Esteja ciente do total descaso que a empresa pode ter com o seu tempo e dedicação. A falta de comunicação, o descumprimento de prazos e a ausência de feedback profissional são um forte sinal sobre a seriedade do processo. (Recomendo fortemente a leitura das avaliações no Glassdoor deles).
+>
+> Aconselho cautela ao participar de processos seletivos desta empresa. - 11 de Agosto de 2025
 
 <p align="center">
   <b><i>🚀 | Minha solução para o Desafio técnico para a vaga de Front-End na NoWeb Publicidade!</i></b>
